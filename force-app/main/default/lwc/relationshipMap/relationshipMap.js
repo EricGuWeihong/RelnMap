@@ -172,10 +172,10 @@ export default class helloWorld extends LightningElement {
                 },
                 force: {
                     // gravity: 0.1,               //节点受到的向中心的引力因子。该值越大节点越往中心点靠拢
-                    repulsion: 50,              //节点之间的斥力因子，值越大则斥力越大
-                    layoutAnimation: true,     //关闭动画效果
-                    edgeLength: [50, 150],       //边的两个节点之间的距离，值最大的边长度会趋向于 10，值最小的边长度会趋向于 50
-                    friction: 0.1              //这个参数能减缓节点的移动速度。取值范围 0 到 1。
+                    repulsion: 50,            //节点之间的斥力因子，值越大则斥力越大
+                    layoutAnimation: true,    //关闭动画效果
+                    edgeLength: [50, 150],    //边的两个节点之间的距离，值最大的边长度会趋向于 10，值最小的边长度会趋向于 50
+                    friction: 0.1             //这个参数能减缓节点的移动速度。取值范围 0 到 1。
                 },
                 zoom: 1
             }
