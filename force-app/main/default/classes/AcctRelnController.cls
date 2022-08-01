@@ -9,12 +9,14 @@ public with sharing class AcctRelnController {
             //         WITH SECURITY_ENFORCED
             //         ];
             return [
-                SELECT BEI_Weight__c, OCE__From__c,OCE__From__r.Name, tolabel(OCE__From__r.OCE__Department__c), OCE__From__r.BEI_Relation__c,
-                       OCE__To__c, OCE__To__r.Name, tolabel(OCE__To__r.OCE__Department__c), OCE__To__r.BEI_Relation__c
+                SELECT BEI_Weight__c, OCE__From__c, OCE__From__r.Name, tolabel(OCE__From__r.OCE__Department__c), 
+                    OCE__From__r.BEI_Relation__c, OCE__To__c, OCE__To__r.Name,
+                    tolabel(OCE__To__r.OCE__Department__c), OCE__To__r.BEI_Relation__c,
+                    BEI_RND_Weight__c, BEI_Same_Hospital__c
                 FROM OCE__Affiliation__c 
                 WHERE OCE__From__c = :accountId AND OCE__UniqueIntegrationID__c != null AND IsDeleted = False
                 ORDER BY BEI_Weight__c DESC NULLS LAST
-                LIMIT 50
+                LIMIT 30
             ];
         } catch (Exception e) {
             return null;
